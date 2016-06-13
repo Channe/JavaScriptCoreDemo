@@ -26,6 +26,14 @@
     [jsFunc callWithArguments:nil];
 }
 
+// JS调用此方法来调用OC的方法并返回值
+- (NSString *)callAndReturn;
+{
+    NSString *string = @"返回值";
+    
+    return string;
+}
+
 // JS调用OC，然后在OC中通过调用JS方法来传值给JS
 - (void)jsCallObjcAndObjcCallJsWithDict:(NSDictionary *)params {
     NSLog(@"jsCallObjcAndObjcCallJsWithDict was called, params is %@", params);

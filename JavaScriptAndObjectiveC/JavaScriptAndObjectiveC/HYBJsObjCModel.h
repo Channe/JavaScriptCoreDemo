@@ -19,6 +19,9 @@
 // JS调用此方法来调用OC的方法
 - (void)callSystemCamera;
 
+// JS调用此方法来调用OC的方法并返回值
+- (NSString *)callAndReturn;
+
 // JS调用OC，然后在OC中通过调用JS方法来传值给JS
 - (void)jsCallObjcAndObjcCallJsWithDict:(NSDictionary *)params;
 

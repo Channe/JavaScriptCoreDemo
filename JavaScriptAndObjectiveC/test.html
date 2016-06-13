@@ -10,12 +10,19 @@
   <script type="text/javascript">
 
   var jsFunc = function() {
-    alert('Objective-C 调用了 JS 函数');
+    alert('Objective-C call JS func');
   }
   
   var jsParamFunc = function(argument) {
     document.getElementById('jsParamFuncSpan').innerHTML
     = argument['name'];
+  }
+  
+  var jsReturnFunc = function() {
+      var x = ObjectiveCModel.callAndReturn();
+      
+      document.getElementById('jsReturnFuncSpan').innerHTML
+      = x;
   }
   
   </script>
@@ -28,6 +35,7 @@
 	<h1>Test how to use objective-c call js</h1>
 	<input type="button" value="Call ObjC system camera" onclick="ObjectiveCModel.callSystemCamera()">
 	<input type="button" value="Call ObjC system alert" onclick="ObjectiveCModel.showAlertMsg('js title', 'js message')">
+    <input type="button" value="Call ObjC and Return" onclick="jsReturnFunc()">
 </div>
 
 <div>
@@ -37,6 +45,7 @@
 
 <div>
 	<span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
+    <span id="jsReturnFuncSpan" style="color: red; font-size: 50px;"></span>
 </div>
 
 
